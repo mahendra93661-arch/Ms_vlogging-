@@ -315,3 +315,31 @@ img{
 max-width:100%;
 display:block;
 }
+/* ===== All Received ===== */
+
+#received{
+padding:80px 20px;
+text-align:center;
+background:#111;
+color:#fff;
+}
+
+.received-box{
+max-width:350px;
+margin:auto;
+padding:30px;
+background:#1b1b1b;
+border-radius:15px;
+box-shadow:0 0 20px rgba(255,0,0,.3);
+}
+
+.received-box p{
+font-size:18px;
+margin-bottom:10px;
+color:#ccc;
+}
+
+.received-box h1{
+font-size:55px;
+color:#ff2e2e;
+}
