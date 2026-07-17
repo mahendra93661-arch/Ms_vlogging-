@@ -1,14 +1,56 @@
-// MS VLOGING
+// ===== MS VLOGING V2 =====
 
-window.addEventListener("load", () => {
-    console.log("Welcome To MS VLOGING");
+// Loading Screen
+window.addEventListener("load", function () {
+  const loader = document.getElementById("loader");
+
+  setTimeout(() => {
+    if (loader) {
+      loader.style.opacity = "0";
+      loader.style.visibility = "hidden";
+    }
+  }, 1200);
 });
 
-const links = document.querySelectorAll("nav a");
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
 
-links.forEach(link => {
-    link.addEventListener("click", () => {
-        links.forEach(l => l.classList.remove("active"));
-        link.classList.add("active");
-    });
+    const target = document.querySelector(this.getAttribute("href"));
+
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  });
 });
+
+// Gallery Animation
+const images = document.querySelectorAll(".gallery img");
+
+images.forEach(img => {
+  img.addEventListener("mouseenter", () => {
+    img.style.transform = "scale(1.08)";
+  });
+
+  img.addEventListener("mouseleave", () => {
+    img.style.transform = "scale(1)";
+  });
+});
+
+// Navbar Background
+window.addEventListener("scroll", () => {
+
+  const header = document.querySelector("header");
+
+  if (window.scrollY > 50) {
+    header.style.background = "rgba(0,0,0,.85)";
+  } else {
+    header.style.background = "rgba(0,0,0,.45)";
+  }
+
+});
+
+console.log("MS VLOGING V2 Loaded Successfully 🚀");
