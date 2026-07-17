@@ -54,3 +54,20 @@ window.addEventListener("scroll", () => {
 });
 
 console.log("MS VLOGING V2 Loaded Successfully 🚀");
+// ===== Visitor Counter =====
+
+let visitorCount = localStorage.getItem("visitorCount");
+
+if (visitorCount === null) {
+  visitorCount = 0;
+}
+
+visitorCount++;
+
+localStorage.setItem("visitorCount", visitorCount);
+
+const counter = document.getElementById("visitorCount");
+
+if (counter) {
+  counter.innerText = visitorCount;
+}
